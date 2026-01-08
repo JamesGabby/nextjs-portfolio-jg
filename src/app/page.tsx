@@ -1,6 +1,7 @@
 import {
   HeroSection,
   ServicesSection,
+  ProjectsSection,
   WhyMeSection,
   TechStackSection,
   ProcessSection,
@@ -14,6 +15,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <ServicesSection />
+      <ProjectsSection />
       <WhyMeSection />
       <TechStackSection />
       <ProcessSection />

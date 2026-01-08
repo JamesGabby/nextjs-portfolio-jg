@@ -7,3 +7,4 @@ export { ProcessSection } from "./process";
 export { TestimonialsSection } from "./testimonials";
 export { FAQSection } from "./faq";
 export { ContactSection } from "./contact";
+export { ProjectsSection } from "./projects";

@@ -133,3 +133,48 @@ export interface AnimationVariant {
     };
   };
 }
+
+// Project Types
+export interface Project {
+  id: string;
+  title: string;
+  slug: string;
+  description: string;
+  longDescription?: string;
+  image: string;
+  images?: string[];
+  category: ProjectCategory;
+  tags: string[];
+  technologies: string[];
+  liveUrl?: string;
+  githubUrl?: string;
+  caseStudyUrl?: string;
+  featured?: boolean;
+  results?: ProjectResult[];
+  testimonial?: {
+    quote: string;
+    author: string;
+    role: string;
+  };
+  completedAt: string;
+}
+
+export type ProjectCategory =
+  | "all"
+  | "ai-chatbot"
+  | "ecommerce"
+  | "web-app"
+  | "landing-page"
+  | "migration";
+
+export interface ProjectResult {
+  metric: string;
+  value: string;
+  description?: string;
+}
+
+export interface ProjectFilter {
+  id: ProjectCategory;
+  label: string;
+  count?: number;
+}
