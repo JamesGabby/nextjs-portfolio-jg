@@ -73,7 +73,7 @@ export function Header() {
               </div>
               <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary to-blue-600 blur-lg opacity-50 group-hover:opacity-70 transition-opacity" />
             </div>
-            <span className="hidden sm:block font-semibold text-lg">
+            <span className="hidden sm:block font-semibold text-base">
               James Gabbitus
             </span>
           </Link>
@@ -85,7 +85,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+                className="px-4 py-2 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
               >
                 {item.label}
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
@@ -101,6 +101,7 @@ export function Header() {
                 href={SITE_CONFIG.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="flex items-center text-sm"
               >
                 <MessageCircle className="w-4 h-4 mr-2" />
                 WhatsApp
@@ -111,6 +112,7 @@ export function Header() {
                 href={SITE_CONFIG.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="flex items-center text-sm"
               >
                 <Calendar className="w-4 h-4 mr-2" />
                 Book a Call
@@ -138,7 +140,7 @@ export function Header() {
                       key={item.href}
                       href={item.href}
                       onClick={(e) => handleNavClick(e, item.href)}
-                      className="px-4 py-3 text-lg font-medium text-foreground hover:text-primary hover:bg-muted rounded-lg transition-colors"
+                      className="px-4 py-3 text-base font-medium text-foreground hover:text-primary hover:bg-muted rounded-lg transition-colors"
                     >
                       {item.label}
                     </Link>
