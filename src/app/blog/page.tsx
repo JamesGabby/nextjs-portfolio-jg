@@ -10,7 +10,7 @@ export default async function BlogIndexPage() {
   const posts = await getAllPosts();
 
   return (
-    <div className="container max-w-5xl mx-auto py-12 px-4 md:px-6 pt-38 sm:pt-40">
+    <div className="container max-w-5xl mx-auto py-12 px-4 md:px-6 pt-38 sm:pt-40 pb-28 sm:pb-30">
       {/* Header Section */}
       <div className="mb-12 space-y-4 text-center md:text-left">
         <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">

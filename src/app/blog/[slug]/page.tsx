@@ -38,7 +38,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   if (!post) notFound();
 
   return (
-    <article className="container max-w-3xl mx-auto py-12 px-4 md:px-6 pt-38 sm:pt-40">
+    <article className="container max-w-3xl mx-auto py-12 px-4 md:px-6 pt-38 sm:pt-40 pb-16 sm:pb-20">
       <Link href="/blog" className="inline-flex items-center text-sm mb-8 text-muted-foreground hover:text-primary">
         <ChevronLeft className="mr-1 h-4 w-4" /> Back to blog
       </Link>
