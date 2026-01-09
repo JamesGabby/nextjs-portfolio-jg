@@ -28,13 +28,14 @@ export const SITE_CONFIG = {
 
 // Navigation
 export const NAV_ITEMS: NavItem[] = [
-  { label: "Services", href: "#services" },
-  { label: "Projects", href: "#projects" },
-  { label: "Why Me", href: "#why-me" },
-  { label: "Tech Stack", href: "#tech-stack" },
-  { label: "Process", href: "#process" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/#services" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Why Me", href: "/#why-me" },
+  { label: "Tech Stack", href: "/#tech-stack" },
+  { label: "Process", href: "/#process" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Contact", href: "/#contact" },
+  { label: "Blog", href: "/blog" },
 ];
 
 // Services

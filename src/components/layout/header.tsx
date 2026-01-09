@@ -327,29 +327,31 @@ export function Header() {
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: index * 0.05 }}
                         >
-                          <Link
-                            href={item.href}
-                            onClick={(e) => handleNavClick(e, item.href)}
-                            className={cn(
-                              "flex items-center gap-3 px-4 py-3.5 rounded-xl font-medium transition-all duration-200",
-                              isActive
-                                ? "bg-primary text-primary-foreground shadow-md"
-                                : "text-foreground hover:bg-muted"
-                            )}
-                          >
-                            <Icon
+                          <SheetClose asChild>
+                            <Link
+                              href={item.href}
+                              onClick={(e) => handleNavClick(e, item.href)}
                               className={cn(
-                                "w-5 h-5",
+                                "flex items-center gap-3 px-4 py-3.5 rounded-xl font-medium transition-all duration-200",
                                 isActive
-                                  ? "text-primary-foreground"
-                                  : "text-muted-foreground"
+                                  ? "bg-primary text-primary-foreground shadow-md"
+                                  : "text-foreground hover:bg-muted"
                               )}
-                            />
-                            <span>{item.label}</span>
-                            {isActive && (
-                              <ChevronRight className="w-4 h-4 ml-auto" />
-                            )}
-                          </Link>
+                            >
+                              <Icon
+                                className={cn(
+                                  "w-5 h-5",
+                                  isActive
+                                    ? "text-primary-foreground"
+                                    : "text-muted-foreground"
+                                )}
+                              />
+                              <span>{item.label}</span>
+                              {isActive && (
+                                <ChevronRight className="w-4 h-4 ml-auto" />
+                              )}
+                            </Link>
+                          </SheetClose>
                         </motion.div>
                       );
                     })}
