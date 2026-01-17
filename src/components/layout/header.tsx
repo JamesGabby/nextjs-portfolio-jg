@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import {
   Menu,
@@ -136,15 +137,23 @@ export function Header() {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
+
             <div className="relative">
-              {/* Logo Mark */}
+              {/* Logo Image */}
               <motion.div
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center text-white font-bold text-base sm:text-lg shadow-lg shadow-primary/25"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden shadow-lg shadow-primary/25"
                 whileHover={{ scale: 1.05, rotate: -5 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                JG
+                <Image
+                  src="/images/jg.png"
+                  alt="James Gabbitus Logo"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                  priority
+                />
               </motion.div>
               {/* Glow Effect */}
               <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary to-blue-600 blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-300" />

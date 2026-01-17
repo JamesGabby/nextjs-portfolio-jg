@@ -165,7 +165,9 @@ export type ProjectCategory =
   | "ecommerce"
   | "web-app"
   | "landing-page"
-  | "migration";
+  | "migration"
+  | "ai-saas"
+
 
 export interface ProjectResult {
   metric: string;

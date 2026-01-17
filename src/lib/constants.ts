@@ -429,19 +429,84 @@ export const PROJECT_FILTERS: ProjectFilter[] = [
   { id: "web-app", label: "Web Apps" },
   { id: "landing-page", label: "Landing Pages" },
   { id: "migration", label: "Migrations" },
+  { id: "ai-saas", label: "AI SaaS" },
 ];
 
 // Projects Data
 export const PROJECTS: Project[] = [
   {
     id: "1",
+    title: "Lessonly",
+    slug: "lessonly-ai-saas",
+    description:
+      "AI-powered SaaS platform for UK teachers and tutors, featuring intelligent lesson planning, student progress tracking, and personalized learning recommendations.",
+    longDescription:
+      "Developed a comprehensive AI SaaS platform designed specifically for UK teachers and tutors. Lessonly leverages artificial intelligence to streamline lesson planning, automate administrative tasks, track student progress, and provide personalized learning recommendations based on individual student needs and curriculum requirements.",
+    image: "/projects/lessonly-preview.jpg",
+    images: [
+      "/projects/lessonly-1.jpg",
+      "/projects/lessonly-2.jpg",
+      "/projects/lessonly-3.jpg",
+    ],
+    category: "ai-saas",
+    tags: ["AI", "SaaS", "Education", "EdTech", "UK Teachers", "Tutoring"],
+    technologies: ["Next.js", "OpenAI", "Supabase", "Tailwind CSS", "Vercel", "Stripe"],
+    liveUrl: "https://lessonly.co.uk",
+    featured: true,
+    results: [
+      { metric: "Time Saved", value: "10hrs", description: "Weekly hours saved per teacher" },
+      { metric: "Teachers", value: "2K+", description: "Active UK teachers using platform" },
+      { metric: "Lessons Created", value: "50K+", description: "AI-assisted lessons generated" },
+      { metric: "Satisfaction", value: "96%", description: "Teacher satisfaction rate" },
+    ],
+    testimonial: {
+      quote: "Lessonly has revolutionised how I plan my lessons. The AI suggestions are spot-on for the UK curriculum and I've gained back hours of my week.",
+      author: "Rebecca Hughes",
+      role: "Year 6 Teacher, London Primary School",
+    },
+    completedAt: "2024-04",
+  },
+  {
+    id: "2",
+    title: "Gym Booking System",
+    slug: "gym-booking-system",
+    description:
+      "Complete gym management solution with admin dashboard, class scheduling, member management, and real-time booking capabilities.",
+    longDescription:
+      "Built a full-featured gym booking and management system featuring a comprehensive admin dashboard for gym owners, real-time class scheduling, member management, payment processing, attendance tracking, and analytics. The platform enables gyms to streamline operations and provide members with an easy booking experience.",
+    image: "/projects/gym-booking-preview.jpg",
+    images: [
+      "/projects/gym-booking-1.jpg",
+      "/projects/gym-booking-2.jpg",
+      "/projects/gym-booking-3.jpg",
+    ],
+    category: "web-app",
+    tags: ["Booking System", "Admin Dashboard", "Fitness", "Management", "SaaS"],
+    technologies: ["Next.js", "Supabase", "Stripe", "Tailwind CSS", "Vercel", "React Query"],
+    liveUrl: "https://example-gym.com",
+    featured: true,
+    results: [
+      { metric: "Bookings", value: "+180%", description: "Increase in class bookings" },
+      { metric: "No-shows", value: "-65%", description: "Reduction in missed appointments" },
+      { metric: "Admin Time", value: "-70%", description: "Time saved on administration" },
+      { metric: "Members", value: "15K+", description: "Active gym members managed" },
+    ],
+    testimonial: {
+      quote: "The admin dashboard gives us complete visibility over our operations. Managing classes and members has never been easier, and our members love the booking app.",
+      author: "Mark Stevens",
+      role: "Owner, FitLife Gyms",
+    },
+    completedAt: "2024-03",
+  },
+  {
+    id: "3",
     title: "AI Customer Support Bot",
     slug: "ai-customer-support-bot",
     description:
       "Intelligent chatbot that reduced support tickets by 70% and handles 10,000+ conversations monthly for a SaaS company.",
     longDescription:
       "Built a custom AI-powered customer support chatbot that integrates with the client's knowledge base, CRM, and ticketing system. The bot uses natural language processing to understand customer intent and provide accurate responses 24/7.",
-    image: "/projects/chatbot-preview.jpg",
+    image: "/projects/chatbot.png",
     images: [
       "/projects/chatbot-1.jpg",
       "/projects/chatbot-2.jpg",
@@ -466,7 +531,7 @@ export const PROJECTS: Project[] = [
     completedAt: "2024-01",
   },
   {
-    id: "2",
+    id: "4",
     title: "Luxury Fashion E-Commerce",
     slug: "luxury-fashion-ecommerce",
     description:
@@ -488,7 +553,7 @@ export const PROJECTS: Project[] = [
     completedAt: "2024-02",
   },
   {
-    id: "3",
+    id: "5",
     title: "FinTech Dashboard",
     slug: "fintech-dashboard",
     description:
@@ -511,7 +576,7 @@ export const PROJECTS: Project[] = [
     completedAt: "2023-12",
   },
   {
-    id: "4",
+    id: "6",
     title: "SaaS Landing Page",
     slug: "saas-landing-page",
     description:
@@ -532,7 +597,7 @@ export const PROJECTS: Project[] = [
     completedAt: "2024-01",
   },
   {
-    id: "5",
+    id: "7",
     title: "Healthcare Platform Migration",
     slug: "healthcare-platform-migration",
     description:
@@ -552,7 +617,7 @@ export const PROJECTS: Project[] = [
     completedAt: "2023-11",
   },
   {
-    id: "6",
+    id: "8",
     title: "Restaurant Ordering System",
     slug: "restaurant-ordering-system",
     description:
@@ -573,7 +638,7 @@ export const PROJECTS: Project[] = [
     completedAt: "2023-10",
   },
   {
-    id: "7",
+    id: "9",
     title: "AI Content Generator",
     slug: "ai-content-generator",
     description:
@@ -594,7 +659,7 @@ export const PROJECTS: Project[] = [
     completedAt: "2024-03",
   },
   {
-    id: "8",
+    id: "10",
     title: "Fitness E-Commerce",
     slug: "fitness-ecommerce",
     description:
