@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   ExternalLink,
@@ -30,6 +29,8 @@ export function ProjectCard({
   variant = "default",
 }: ProjectCardProps) {
   const isFeatured = variant === "featured";
+  const [imageError, setImageError] = React.useState(false);
+  const hasValidImage = project.image && !imageError;
 
   return (
     <motion.div
@@ -59,21 +60,42 @@ export function ProjectCard({
             "relative overflow-hidden",
             isFeatured ? "aspect-[4/3] md:aspect-auto md:min-h-[400px]" : "aspect-video"
           )}>
-            {/* Project Image */}
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              sizes={isFeatured 
-                ? "(max-width: 768px) 100vw, 50vw" 
-                : "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              }
-              priority={index < 2}
-            />
-            
-            {/* Gradient overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-60" />
+            {hasValidImage ? (
+              <>
+                {/* Project Image */}
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes={isFeatured 
+                    ? "(max-width: 768px) 100vw, 50vw" 
+                    : "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  }
+                  priority={index < 2}
+                  onError={() => setImageError(true)}
+                />
+                
+                {/* Gradient overlay for better text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-60" />
+              </>
+            ) : (
+              /* Fallback placeholder when no image */
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-blue-600/20">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 rounded-2xl bg-background/80 backdrop-blur-sm flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-2xl font-bold text-primary">
+                        {project.title.charAt(0)}
+                      </span>
+                    </div>
+                    <p className="text-sm text-muted-foreground font-medium">
+                      {project.category.replace("-", " ").replace(/\b\w/g, (l) => l.toUpperCase())}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Hover overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">

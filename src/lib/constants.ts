@@ -515,7 +515,7 @@ export const PROJECTS: Project[] = [
     category: "ai-chatbot",
     tags: ["AI", "Chatbot", "Customer Support", "SaaS"],
     technologies: ["Next.js", "OpenAI", "Supabase", "Tailwind CSS", "Vercel"],
-    liveUrl: "https://example.com",
+    liveUrl: "https://techgear-9531.myshopify.com/",
     featured: true,
     results: [
       { metric: "Support Tickets", value: "-70%", description: "Reduction in support tickets" },

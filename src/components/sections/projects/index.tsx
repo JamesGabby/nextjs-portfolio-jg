@@ -28,6 +28,7 @@ export function ProjectsSection() {
       "web-app": 0,
       "landing-page": 0,
       migration: 0,
+      "ai-saas": 0,
     };
 
     PROJECTS.forEach((project) => {
