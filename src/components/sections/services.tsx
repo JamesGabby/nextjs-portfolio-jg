@@ -46,7 +46,7 @@ interface ServiceCardProps {
   index: number;
 }
 
-function ServiceCard({ service, index }: ServiceCardProps) {
+function ServiceCard({ service }: ServiceCardProps) {
   const Icon = iconMap[service.icon] ?? Layout;
   const isAIChatbot = service.id === "ai-chatbot";
 
