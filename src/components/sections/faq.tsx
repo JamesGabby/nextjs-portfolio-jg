@@ -97,7 +97,7 @@ export function FAQSection() {
         <div>
           <StaggerContainer staggerDelay={0.05}>
             <Accordion type="single" collapsible className="space-y-4">
-              {FAQS.map((faq, index) => (
+              {FAQS.map((faq) => (
                 <StaggerItem key={faq.id}>
                   <AccordionItem
                     value={faq.id}
