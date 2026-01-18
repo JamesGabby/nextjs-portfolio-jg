@@ -16,10 +16,10 @@ export const contactFormSchema = z.object({
     .optional()
     .or(z.literal("")),
   projectType: z.enum(PROJECT_TYPES, {
-    errorMap: () => ({ message: "Please select a project type" }),
+    message: "Please select a project type",
   }),
   budget: z.enum(BUDGET_RANGES, {
-    errorMap: () => ({ message: "Please select a budget range" }),
+    message: "Please select a budget range",
   }),
   message: z
     .string()
