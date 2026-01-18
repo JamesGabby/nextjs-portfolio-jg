@@ -13,6 +13,7 @@ import {
   Bot,
   ShoppingCart,
   Rocket,
+  CloudLightning
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -26,6 +27,7 @@ const highlights = [
   { label: "Next.js Migration", icon: Code2 },
   { label: "Landing Pages", icon: Rocket },
   { label: "Web Applications", icon: Zap },
+  { label: "Portfolio Websites", icon: CloudLightning },
 ];
 
 const stats = [

@@ -120,6 +120,21 @@ export const SERVICES: Service[] = [
     ],
     href: "#contact",
   },
+  {
+    id: "portfolios",
+    title: "Portfolio Websites",
+    description:
+      "Stunning portfolio websites to showcase your work and attract clients. Professionally designed and optimized for performance.",
+    icon: "CloudLightning",
+    features: [
+      "Showcase your projects",
+      "Responsive design",
+      "SEO best practices",
+      "Fast load times",
+      "Impressive visuals",
+    ],
+    href: "#contact",
+  },
 ];
 
 // Technologies

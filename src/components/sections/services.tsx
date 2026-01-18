@@ -12,6 +12,7 @@ import {
   ArrowRight,
   CheckCircle2,
   Play,
+  CloudLightning
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -39,6 +40,7 @@ const iconMap: Record<string, React.ElementType> = {
   RefreshCw: RefreshCw,
   Rocket: Rocket,
   Layout: Layout,
+  CloudLightning: CloudLightning,
 };
 
 interface ServiceCardProps {
