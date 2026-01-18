@@ -478,7 +478,7 @@ export const PROJECTS: Project[] = [
     category: "web-app",
     tags: ["Booking System", "Admin Dashboard", "Fitness", "Management", "SaaS"],
     technologies: ["Next.js", "Supabase", "Stripe", "Tailwind CSS", "Vercel", "React Query"],
-    liveUrl: "https://example-gym.com",
+    liveUrl: "https://newbodiesgym.vercel.app/",
     featured: true,
     results: [
       { metric: "Bookings", value: "+180%", description: "Increase in class bookings" },
@@ -535,7 +535,7 @@ export const PROJECTS: Project[] = [
     category: "landing-page",
     tags: ["Landing Page", "SaaS", "B2B", "Conversion"],
     technologies: ["Next.js", "Framer Motion", "Tailwind CSS", "Vercel"],
-    liveUrl: "https://example.com",
+    liveUrl: "https://repurpose-ai-delta.vercel.app/",
     featured: true,
     results: [
       { metric: "Conversion Rate", value: "12%", description: "Visitor to lead conversion" },
@@ -557,7 +557,7 @@ export const PROJECTS: Project[] = [
     category: "web-app",
     tags: ["Dashboard", "FinTech", "Analytics", "Real-time"],
     technologies: ["Next.js", "Supabase", "D3.js", "WebSocket", "Tailwind CSS"],
-    liveUrl: "https://example.com",
+    liveUrl: "https://acevent.com",
     githubUrl: "https://github.com/jamesgabby",
     featured: true,
     results: [
