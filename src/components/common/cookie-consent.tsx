@@ -20,6 +20,7 @@ export function CookieConsent() {
       }, 2000);
       return () => clearTimeout(timer);
     }
+    return undefined; // Add explicit return for other code paths
   }, []);
 
   const acceptCookies = () => {
