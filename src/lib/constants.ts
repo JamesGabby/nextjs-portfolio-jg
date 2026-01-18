@@ -442,11 +442,9 @@ export const PROJECTS: Project[] = [
       "AI-powered SaaS platform for UK teachers and tutors, featuring intelligent lesson planning, student progress tracking, and personalized learning recommendations.",
     longDescription:
       "Developed a comprehensive AI SaaS platform designed specifically for UK teachers and tutors. Lessonly leverages artificial intelligence to streamline lesson planning, automate administrative tasks, track student progress, and provide personalized learning recommendations based on individual student needs and curriculum requirements.",
-    image: "/projects/lessonly-preview.jpg",
+    image: "/projects/less.png",
     images: [
-      "/projects/lessonly-1.jpg",
-      "/projects/lessonly-2.jpg",
-      "/projects/lessonly-3.jpg",
+      "/projects/lessonly-analytics-2.png",
     ],
     category: "ai-saas",
     tags: ["AI", "SaaS", "Education", "EdTech", "UK Teachers", "Tutoring"],
@@ -474,11 +472,8 @@ export const PROJECTS: Project[] = [
       "Complete gym management solution with admin dashboard, class scheduling, member management, and real-time booking capabilities.",
     longDescription:
       "Built a full-featured gym booking and management system featuring a comprehensive admin dashboard for gym owners, real-time class scheduling, member management, payment processing, attendance tracking, and analytics. The platform enables gyms to streamline operations and provide members with an easy booking experience.",
-    image: "/projects/gym-booking-preview.jpg",
+    image: "/projects/booking.png",
     images: [
-      "/projects/gym-booking-1.jpg",
-      "/projects/gym-booking-2.jpg",
-      "/projects/gym-booking-3.jpg",
     ],
     category: "web-app",
     tags: ["Booking System", "Admin Dashboard", "Fitness", "Management", "SaaS"],
@@ -508,9 +503,7 @@ export const PROJECTS: Project[] = [
       "Built a custom AI-powered customer support chatbot that integrates with the client's knowledge base, CRM, and ticketing system. The bot uses natural language processing to understand customer intent and provide accurate responses 24/7.",
     image: "/projects/chatbot.png",
     images: [
-      "/projects/chatbot-1.jpg",
-      "/projects/chatbot-2.jpg",
-      "/projects/chatbot-3.jpg",
+      
     ],
     category: "ai-chatbot",
     tags: ["AI", "Chatbot", "Customer Support", "SaaS"],
@@ -532,25 +525,25 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "4",
-    title: "Luxury Fashion E-Commerce",
-    slug: "luxury-fashion-ecommerce",
+    title: "SaaS Landing Page",
+    slug: "saas-landing-page",
     description:
-      "High-end fashion store with 3D product views, AR try-on, and seamless checkout that increased conversions by 150%.",
+      "High-converting landing page for a B2B SaaS product that achieved a 12% conversion rate and 40% reduction in bounce rate.",
     longDescription:
-      "Developed a premium e-commerce platform for a luxury fashion brand featuring immersive 3D product visualization, AR-powered virtual try-on, and a streamlined checkout process optimized for mobile users.",
-    image: "/projects/ecommerce-preview.jpg",
-    category: "ecommerce",
-    tags: ["E-Commerce", "Fashion", "3D", "AR"],
-    technologies: ["Next.js", "Shopify", "Three.js", "Stripe", "Tailwind CSS"],
+      "Designed and developed a conversion-optimized landing page for a B2B SaaS company, featuring compelling copywriting, social proof elements, interactive demos, and A/B tested CTAs.",
+    image: "/projects/repurpose-preview.png",
+    category: "landing-page",
+    tags: ["Landing Page", "SaaS", "B2B", "Conversion"],
+    technologies: ["Next.js", "Framer Motion", "Tailwind CSS", "Vercel"],
     liveUrl: "https://example.com",
     featured: true,
     results: [
-      { metric: "Conversion Rate", value: "+150%", description: "Increase in conversions" },
-      { metric: "Avg. Order Value", value: "+35%", description: "Higher average orders" },
-      { metric: "Page Speed", value: "98", description: "Lighthouse performance score" },
-      { metric: "Mobile Sales", value: "+200%", description: "Mobile revenue increase" },
+      { metric: "Conversion Rate", value: "12%", description: "Visitor to lead conversion" },
+      { metric: "Bounce Rate", value: "-40%", description: "Reduction in bounce rate" },
+      { metric: "Load Time", value: "0.8s", description: "Page load speed" },
+      { metric: "SEO Score", value: "100", description: "Perfect SEO score" },
     ],
-    completedAt: "2024-02",
+    completedAt: "2024-01",
   },
   {
     id: "5",
@@ -560,7 +553,7 @@ export const PROJECTS: Project[] = [
       "Real-time financial analytics dashboard with live data streaming, interactive charts, and customizable widgets.",
     longDescription:
       "Created a comprehensive financial dashboard for a fintech startup, featuring real-time data visualization, portfolio tracking, market analysis tools, and AI-powered investment insights.",
-    image: "/projects/dashboard-preview.jpg",
+    image: "/projects/acevent.png",
     category: "web-app",
     tags: ["Dashboard", "FinTech", "Analytics", "Real-time"],
     technologies: ["Next.js", "Supabase", "D3.js", "WebSocket", "Tailwind CSS"],
@@ -575,108 +568,108 @@ export const PROJECTS: Project[] = [
     ],
     completedAt: "2023-12",
   },
-  {
-    id: "6",
-    title: "SaaS Landing Page",
-    slug: "saas-landing-page",
-    description:
-      "High-converting landing page for a B2B SaaS product that achieved a 12% conversion rate and 40% reduction in bounce rate.",
-    longDescription:
-      "Designed and developed a conversion-optimized landing page for a B2B SaaS company, featuring compelling copywriting, social proof elements, interactive demos, and A/B tested CTAs.",
-    image: "/projects/landing-preview.jpg",
-    category: "landing-page",
-    tags: ["Landing Page", "SaaS", "B2B", "Conversion"],
-    technologies: ["Next.js", "Framer Motion", "Tailwind CSS", "Vercel"],
-    liveUrl: "https://example.com",
-    results: [
-      { metric: "Conversion Rate", value: "12%", description: "Visitor to lead conversion" },
-      { metric: "Bounce Rate", value: "-40%", description: "Reduction in bounce rate" },
-      { metric: "Load Time", value: "0.8s", description: "Page load speed" },
-      { metric: "SEO Score", value: "100", description: "Perfect SEO score" },
-    ],
-    completedAt: "2024-01",
-  },
-  {
-    id: "7",
-    title: "Healthcare Platform Migration",
-    slug: "healthcare-platform-migration",
-    description:
-      "Migrated a legacy PHP healthcare platform to Next.js, improving performance by 300% and reducing hosting costs by 60%.",
-    longDescription:
-      "Led the complete migration of a healthcare management platform from a legacy PHP monolith to a modern Next.js application with improved security, performance, and maintainability.",
-    image: "/projects/migration-preview.jpg",
-    category: "migration",
-    tags: ["Migration", "Healthcare", "Performance", "Legacy"],
-    technologies: ["Next.js", "PostgreSQL", "Docker", "AWS", "Tailwind CSS"],
-    results: [
-      { metric: "Performance", value: "+300%", description: "Speed improvement" },
-      { metric: "Hosting Costs", value: "-60%", description: "Cost reduction" },
-      { metric: "Downtime", value: "0", description: "Zero downtime migration" },
-      { metric: "Code Base", value: "-50%", description: "Codebase reduction" },
-    ],
-    completedAt: "2023-11",
-  },
-  {
-    id: "8",
-    title: "Restaurant Ordering System",
-    slug: "restaurant-ordering-system",
-    description:
-      "Mobile-first ordering system with real-time kitchen display, table management, and integrated payments.",
-    longDescription:
-      "Built a complete restaurant management solution including customer-facing ordering app, kitchen display system, table management, inventory tracking, and analytics dashboard.",
-    image: "/projects/restaurant-preview.jpg",
-    category: "web-app",
-    tags: ["Restaurant", "Ordering", "Real-time", "Mobile"],
-    technologies: ["Next.js", "Supabase", "Stripe", "PWA", "Tailwind CSS"],
-    liveUrl: "https://example.com",
-    results: [
-      { metric: "Order Time", value: "-45%", description: "Faster order processing" },
-      { metric: "Revenue", value: "+25%", description: "Revenue increase" },
-      { metric: "Errors", value: "-90%", description: "Order error reduction" },
-      { metric: "Tables", value: "+30%", description: "Table turnover improvement" },
-    ],
-    completedAt: "2023-10",
-  },
-  {
-    id: "9",
-    title: "AI Content Generator",
-    slug: "ai-content-generator",
-    description:
-      "AI-powered content generation platform for marketers with templates, brand voice training, and team collaboration.",
-    longDescription:
-      "Developed an AI content generation SaaS platform that helps marketing teams create on-brand content at scale, featuring custom AI model training, content templates, and collaborative workflows.",
-    image: "/projects/ai-content-preview.jpg",
-    category: "ai-chatbot",
-    tags: ["AI", "Content", "Marketing", "SaaS"],
-    technologies: ["Next.js", "OpenAI", "Supabase", "Redis", "Tailwind CSS"],
-    liveUrl: "https://example.com",
-    results: [
-      { metric: "Content Output", value: "10x", description: "Increase in content production" },
-      { metric: "Time Saved", value: "15hrs", description: "Weekly hours saved per user" },
-      { metric: "Users", value: "2K+", description: "Active users" },
-      { metric: "Accuracy", value: "95%", description: "Brand voice accuracy" },
-    ],
-    completedAt: "2024-03",
-  },
-  {
-    id: "10",
-    title: "Fitness E-Commerce",
-    slug: "fitness-ecommerce",
-    description:
-      "Subscription-based fitness equipment store with workout integration and personalized product recommendations.",
-    longDescription:
-      "Created an innovative e-commerce platform for fitness equipment that combines online shopping with personalized workout plans and AI-powered product recommendations based on fitness goals.",
-    image: "/projects/fitness-preview.jpg",
-    category: "ecommerce",
-    tags: ["E-Commerce", "Fitness", "Subscription", "AI"],
-    technologies: ["Next.js", "Stripe", "Supabase", "Tailwind CSS", "Vercel"],
-    liveUrl: "https://example.com",
-    results: [
-      { metric: "Subscriptions", value: "500+", description: "Monthly subscribers" },
-      { metric: "Retention", value: "85%", description: "Subscriber retention rate" },
-      { metric: "AOV", value: "+45%", description: "Average order value increase" },
-      { metric: "Reviews", value: "4.9★", description: "Average product rating" },
-    ],
-    completedAt: "2023-09",
-  },
+  // {
+  //   id: "6",
+  //   title: "Luxury Fashion E-Commerce",
+  //   slug: "luxury-fashion-ecommerce",
+  //   description:
+  //     "High-end fashion store with 3D product views, AR try-on, and seamless checkout that increased conversions by 150%.",
+  //   longDescription:
+  //     "Developed a premium e-commerce platform for a luxury fashion brand featuring immersive 3D product visualization, AR-powered virtual try-on, and a streamlined checkout process optimized for mobile users.",
+  //   image: "/projects/ecommerce-preview.jpg",
+  //   category: "ecommerce",
+  //   tags: ["E-Commerce", "Fashion", "3D", "AR"],
+  //   technologies: ["Next.js", "Shopify", "Three.js", "Stripe", "Tailwind CSS"],
+  //   liveUrl: "https://example.com",
+  //   results: [
+  //     { metric: "Conversion Rate", value: "+150%", description: "Increase in conversions" },
+  //     { metric: "Avg. Order Value", value: "+35%", description: "Higher average orders" },
+  //     { metric: "Page Speed", value: "98", description: "Lighthouse performance score" },
+  //     { metric: "Mobile Sales", value: "+200%", description: "Mobile revenue increase" },
+  //   ],
+  //   completedAt: "2024-02",
+  // },
+  // {
+  //   id: "7",
+  //   title: "Healthcare Platform Migration",
+  //   slug: "healthcare-platform-migration",
+  //   description:
+  //     "Migrated a legacy PHP healthcare platform to Next.js, improving performance by 300% and reducing hosting costs by 60%.",
+  //   longDescription:
+  //     "Led the complete migration of a healthcare management platform from a legacy PHP monolith to a modern Next.js application with improved security, performance, and maintainability.",
+  //   image: "/projects/migration-preview.jpg",
+  //   category: "migration",
+  //   tags: ["Migration", "Healthcare", "Performance", "Legacy"],
+  //   technologies: ["Next.js", "PostgreSQL", "Docker", "AWS", "Tailwind CSS"],
+  //   results: [
+  //     { metric: "Performance", value: "+300%", description: "Speed improvement" },
+  //     { metric: "Hosting Costs", value: "-60%", description: "Cost reduction" },
+  //     { metric: "Downtime", value: "0", description: "Zero downtime migration" },
+  //     { metric: "Code Base", value: "-50%", description: "Codebase reduction" },
+  //   ],
+  //   completedAt: "2023-11",
+  // },
+  // {
+  //   id: "8",
+  //   title: "Restaurant Ordering System",
+  //   slug: "restaurant-ordering-system",
+  //   description:
+  //     "Mobile-first ordering system with real-time kitchen display, table management, and integrated payments.",
+  //   longDescription:
+  //     "Built a complete restaurant management solution including customer-facing ordering app, kitchen display system, table management, inventory tracking, and analytics dashboard.",
+  //   image: "/projects/restaurant-preview.jpg",
+  //   category: "web-app",
+  //   tags: ["Restaurant", "Ordering", "Real-time", "Mobile"],
+  //   technologies: ["Next.js", "Supabase", "Stripe", "PWA", "Tailwind CSS"],
+  //   liveUrl: "https://example.com",
+  //   results: [
+  //     { metric: "Order Time", value: "-45%", description: "Faster order processing" },
+  //     { metric: "Revenue", value: "+25%", description: "Revenue increase" },
+  //     { metric: "Errors", value: "-90%", description: "Order error reduction" },
+  //     { metric: "Tables", value: "+30%", description: "Table turnover improvement" },
+  //   ],
+  //   completedAt: "2023-10",
+  // },
+  // {
+  //   id: "9",
+  //   title: "AI Content Generator",
+  //   slug: "ai-content-generator",
+  //   description:
+  //     "AI-powered content generation platform for marketers with templates, brand voice training, and team collaboration.",
+  //   longDescription:
+  //     "Developed an AI content generation SaaS platform that helps marketing teams create on-brand content at scale, featuring custom AI model training, content templates, and collaborative workflows.",
+  //   image: "/projects/ai-content-preview.jpg",
+  //   category: "ai-chatbot",
+  //   tags: ["AI", "Content", "Marketing", "SaaS"],
+  //   technologies: ["Next.js", "OpenAI", "Supabase", "Redis", "Tailwind CSS"],
+  //   liveUrl: "https://example.com",
+  //   results: [
+  //     { metric: "Content Output", value: "10x", description: "Increase in content production" },
+  //     { metric: "Time Saved", value: "15hrs", description: "Weekly hours saved per user" },
+  //     { metric: "Users", value: "2K+", description: "Active users" },
+  //     { metric: "Accuracy", value: "95%", description: "Brand voice accuracy" },
+  //   ],
+  //   completedAt: "2024-03",
+  // },
+  // {
+  //   id: "10",
+  //   title: "Fitness E-Commerce",
+  //   slug: "fitness-ecommerce",
+  //   description:
+  //     "Subscription-based fitness equipment store with workout integration and personalized product recommendations.",
+  //   longDescription:
+  //     "Created an innovative e-commerce platform for fitness equipment that combines online shopping with personalized workout plans and AI-powered product recommendations based on fitness goals.",
+  //   image: "/projects/fitness-preview.jpg",
+  //   category: "ecommerce",
+  //   tags: ["E-Commerce", "Fitness", "Subscription", "AI"],
+  //   technologies: ["Next.js", "Stripe", "Supabase", "Tailwind CSS", "Vercel"],
+  //   liveUrl: "https://example.com",
+  //   results: [
+  //     { metric: "Subscriptions", value: "500+", description: "Monthly subscribers" },
+  //     { metric: "Retention", value: "85%", description: "Subscriber retention rate" },
+  //     { metric: "AOV", value: "+45%", description: "Average order value increase" },
+  //     { metric: "Reviews", value: "4.9★", description: "Average product rating" },
+  //   ],
+  //   completedAt: "2023-09",
+  // },
 ];

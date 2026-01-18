@@ -137,7 +137,6 @@ export function Header() {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-
             <div className="relative">
               {/* Logo Image */}
               <motion.div

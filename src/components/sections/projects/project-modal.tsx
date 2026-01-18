@@ -41,6 +41,15 @@ export function ProjectModal({
   hasNext,
   hasPrevious,
 }: ProjectModalProps) {
+  const [imageError, setImageError] = React.useState<Record<number, boolean>>({});
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+
+  // Reset states when project changes
+  React.useEffect(() => {
+    setImageError({});
+    setCurrentImageIndex(0);
+  }, [project?.id]);
+
   // Close on escape key
   React.useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -61,6 +70,28 @@ export function ProjectModal({
   }, [isOpen, onClose, onNext, onPrevious, hasNext, hasPrevious]);
 
   if (!project) return null;
+
+  // Combine main image with images array
+  const allImages = [
+    ...(project.image ? [project.image] : []),
+    ...(project.images || []),
+  ];
+
+  const hasImages = allImages.length > 0;
+  const currentImage = allImages[currentImageIndex];
+  const hasValidCurrentImage = currentImage && !imageError[currentImageIndex];
+
+  const handlePreviousImage = () => {
+    setCurrentImageIndex((prev) =>
+      prev === 0 ? allImages.length - 1 : prev - 1
+    );
+  };
+
+  const handleNextImage = () => {
+    setCurrentImageIndex((prev) =>
+      prev === allImages.length - 1 ? 0 : prev + 1
+    );
+  };
 
   return (
     <AnimatePresence>
@@ -83,7 +114,7 @@ export function ProjectModal({
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
             className="fixed inset-4 md:inset-8 lg:inset-16 z-50 overflow-hidden rounded-2xl border-2 bg-card shadow-2xl"
           >
-            {/* Navigation arrows */}
+            {/* Project Navigation arrows */}
             {hasPrevious && onPrevious && (
               <button
                 onClick={onPrevious}
@@ -114,35 +145,127 @@ export function ProjectModal({
 
             {/* Content */}
             <div className="h-full overflow-y-auto">
-              <div className="grid lg:grid-cols-2 min-h-full">
-                {/* Left - Image/Visual */}
-                <div className="relative bg-gradient-to-br from-primary/20 via-primary/10 to-blue-600/20 min-h-[300px] lg:min-h-full flex items-center justify-center p-8">
-                  <div className="text-center">
-                    <div className="w-24 h-24 rounded-3xl bg-background/80 backdrop-blur-sm flex items-center justify-center mx-auto mb-4">
-                      <span className="text-4xl font-bold text-primary">
-                        {project.title.charAt(0)}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">
-                      {project.title}
-                    </h3>
-                    <p className="text-muted-foreground">
-                      {project.category.replace("-", " ").replace(/\b\w/g, (l) => l.toUpperCase())}
-                    </p>
-                  </div>
+              <div className="flex flex-col lg:flex-row">
+                {/* Left - Image Gallery */}
+                <div className="relative bg-gradient-to-br from-primary/20 via-primary/10 to-blue-600/20 lg:w-1/2 lg:sticky lg:top-0 lg:h-screen">
+                  {hasImages && hasValidCurrentImage ? (
+                    <div className="p-4 flex flex-col">
+                      {/* Main Image */}
+                      <div className="relative">
+                        <Image
+                          src={currentImage}
+                          alt={`${project.title} - Image ${currentImageIndex + 1}`}
+                          width={800}
+                          height={600}
+                          className="w-full h-auto object-contain rounded-lg"
+                          priority
+                          onError={() =>
+                            setImageError((prev) => ({
+                              ...prev,
+                              [currentImageIndex]: true,
+                            }))
+                          }
+                        />
+                      </div>
 
-                  {/* Decorative elements */}
-                  <div className="absolute top-8 left-8 w-32 h-32 bg-primary/20 rounded-full blur-3xl" />
-                  <div className="absolute bottom-8 right-8 w-40 h-40 bg-blue-600/20 rounded-full blur-3xl" />
+                      {/* Image Navigation - only show if multiple images */}
+                      {allImages.length > 1 && (
+                        <div className="mt-4">
+                          {/* Arrow Navigation */}
+                          <div className="flex items-center justify-center gap-4 mb-3">
+                            <button
+                              onClick={handlePreviousImage}
+                              className="w-8 h-8 rounded-full bg-background/80 backdrop-blur-sm border flex items-center justify-center hover:bg-background transition-colors"
+                              aria-label="Previous image"
+                            >
+                              <ChevronLeft className="w-4 h-4" />
+                            </button>
+                            <span className="text-sm text-muted-foreground">
+                              {currentImageIndex + 1} / {allImages.length}
+                            </span>
+                            <button
+                              onClick={handleNextImage}
+                              className="w-8 h-8 rounded-full bg-background/80 backdrop-blur-sm border flex items-center justify-center hover:bg-background transition-colors"
+                              aria-label="Next image"
+                            >
+                              <ChevronRight className="w-4 h-4" />
+                            </button>
+                          </div>
+
+                          {/* Thumbnail Navigation */}
+                          <div className="flex items-center justify-center gap-2 overflow-x-auto pb-2">
+                            {allImages.map((img, index) => (
+                              <button
+                                key={index}
+                                onClick={() => setCurrentImageIndex(index)}
+                                className={cn(
+                                  "relative w-16 h-12 rounded-md overflow-hidden border-2 transition-all flex-shrink-0",
+                                  currentImageIndex === index
+                                    ? "border-primary ring-2 ring-primary/20"
+                                    : "border-transparent hover:border-muted-foreground/50"
+                                )}
+                                aria-label={`View image ${index + 1}`}
+                              >
+                                <Image
+                                  src={img}
+                                  alt={`${project.title} thumbnail ${index + 1}`}
+                                  fill
+                                  className="object-cover"
+                                  sizes="64px"
+                                />
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Project info */}
+                      <div className="mt-4 p-4 bg-black/40 backdrop-blur-sm rounded-lg">
+                        <h3 className="text-lg font-semibold text-white mb-1">
+                          {project.title}
+                        </h3>
+                        <p className="text-white/80 text-sm">
+                          {project.category
+                            .replace("-", " ")
+                            .replace(/\b\w/g, (l) => l.toUpperCase())}
+                        </p>
+                      </div>
+                    </div>
+                  ) : (
+                    // Fallback placeholder
+                    <div className="p-8 flex items-center justify-center min-h-[300px] relative">
+                      <div className="text-center">
+                        <div className="w-24 h-24 rounded-3xl bg-background/80 backdrop-blur-sm flex items-center justify-center mx-auto mb-4">
+                          <span className="text-4xl font-bold text-primary">
+                            {project.title.charAt(0)}
+                          </span>
+                        </div>
+                        <h3 className="text-xl font-semibold text-foreground mb-2">
+                          {project.title}
+                        </h3>
+                        <p className="text-muted-foreground">
+                          {project.category
+                            .replace("-", " ")
+                            .replace(/\b\w/g, (l) => l.toUpperCase())}
+                        </p>
+                      </div>
+
+                      {/* Decorative elements */}
+                      <div className="absolute top-8 left-8 w-32 h-32 bg-primary/20 rounded-full blur-3xl" />
+                      <div className="absolute bottom-8 right-8 w-40 h-40 bg-blue-600/20 rounded-full blur-3xl" />
+                    </div>
+                  )}
                 </div>
 
                 {/* Right - Details */}
-                <div className="p-6 md:p-8 lg:p-10 overflow-y-auto">
+                <div className="p-6 md:p-8 lg:p-10 lg:w-1/2">
                   {/* Header */}
                   <div className="mb-6">
-                    <div className="flex items-center gap-3 mb-4">
+                    <div className="flex items-center gap-3 mb-4 flex-wrap">
                       <Badge variant="secondary">
-                        {project.category.replace("-", " ").replace(/\b\w/g, (l) => l.toUpperCase())}
+                        {project.category
+                          .replace("-", " ")
+                          .replace(/\b\w/g, (l) => l.toUpperCase())}
                       </Badge>
                       {project.featured && (
                         <Badge className="bg-gradient-to-r from-primary to-blue-600 text-white border-0">
@@ -151,10 +274,13 @@ export function ProjectModal({
                       )}
                       <span className="text-sm text-muted-foreground flex items-center gap-1 ml-auto">
                         <Calendar className="w-4 h-4" />
-                        {new Date(project.completedAt).toLocaleDateString("en-GB", {
-                          month: "short",
-                          year: "numeric",
-                        })}
+                        {new Date(project.completedAt).toLocaleDateString(
+                          "en-GB",
+                          {
+                            month: "short",
+                            year: "numeric",
+                          }
+                        )}
                       </span>
                     </div>
 
@@ -199,7 +325,11 @@ export function ProjectModal({
                     <h4 className="font-semibold mb-3">Technologies Used</h4>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
-                        <Badge key={tech} variant="outline" className="px-3 py-1">
+                        <Badge
+                          key={tech}
+                          variant="outline"
+                          className="px-3 py-1"
+                        >
                           {tech}
                         </Badge>
                       ))}
