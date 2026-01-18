@@ -51,7 +51,7 @@ const stepDetails: Record<
     ],
   },
   development: {
-    duration: "2-8 weeks",
+    duration: "1-8 weeks",
     deliverables: [
       "Weekly progress updates",
       "Staging environment access",
@@ -76,7 +76,7 @@ interface ProcessCardProps {
   isLast: boolean;
 }
 
-function ProcessCard({ step, index, isLast }: ProcessCardProps) {
+function ProcessCard({ step, isLast }: ProcessCardProps) {
   const Icon = iconMap[step.icon] ?? Code;
   const details = stepDetails[step.id];
 
