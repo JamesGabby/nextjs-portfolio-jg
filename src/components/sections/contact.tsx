@@ -29,7 +29,6 @@ import { Section } from "@/components/layout/section";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
 import { SITE_CONFIG, PROJECT_TYPES, BUDGET_RANGES } from "@/lib/constants";
 import { contactFormSchema, type ContactFormValues } from "@/lib/validations";
-import { cn } from "@/lib/utils";
 
 const contactMethods = [
   {
