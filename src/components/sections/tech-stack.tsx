@@ -52,7 +52,7 @@ interface TechCardProps {
   index: number;
 }
 
-function TechCard({ tech, index }: TechCardProps) {
+function TechCard({ tech }: TechCardProps) {
   const Icon = iconMap[tech.icon] ?? Layers;
   const gradient = gradientMap[tech.id] ?? "from-primary to-blue-600";
   const bgGradient = bgGradientMap[tech.id] ?? "from-primary/10 to-blue-600/10";
