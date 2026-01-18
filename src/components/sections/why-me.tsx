@@ -68,7 +68,7 @@ interface ValueCardProps {
   index: number;
 }
 
-function ValueCard({ value, index }: ValueCardProps) {
+function ValueCard({ value }: ValueCardProps) {
   const Icon = iconMap[value.icon] ?? Target;
 
   return (
