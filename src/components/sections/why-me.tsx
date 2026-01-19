@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Zap,
@@ -61,6 +62,15 @@ const benefits = [
     title: "Results Focused",
     description: "Every decision optimized for your business goals.",
   },
+];
+
+const companies = [
+  { name: "Netflix", logo: "/logos/netflix.png" },
+  { name: "TikTok", logo: "/logos/tik-tok.png" },
+  { name: "Nike", logo: "/logos/nike.png" },
+  { name: "Notion", logo: "/logos/notion.png" },
+  { name: "Hulu", logo: "/logos/hulu.png" },
+  { name: "Twitch", logo: "/logos/twitch.png" },
 ];
 
 interface ValueCardProps {
@@ -324,25 +334,18 @@ export function WhyMeSection() {
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              {[
-                { name: "Netflix", logo: "N" },
-                { name: "TikTok", logo: "T" },
-                { name: "Nike", logo: "N" },
-                { name: "Notion", logo: "N" },
-                { name: "Hulu", logo: "H" },
-                { name: "Twitch", logo: "T" },
-              ].map((company) => (
+              {companies.map((company) => (
                 <div
                   key={company.name}
-                  className="bg-muted/50 rounded-xl p-6 flex items-center justify-center hover:bg-muted transition-colors"
+                  className="bg-muted/50 rounded-xl p-6 flex items-center justify-center hover:bg-muted transition-colors group"
                 >
-                  <div className="text-center">
-                    <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center mx-auto mb-2 text-xl font-bold">
-                      {company.logo}
-                    </div>
-                    <span className="text-sm text-muted-foreground">
-                      {company.name}
-                    </span>
+                  <div className="relative w-40 h-16 opacity-70 group-hover:opacity-100 transition-opacity">
+                    <Image
+                      src={company.logo}
+                      alt={company.name}
+                      fill
+                      className="object-contain"
+                    />
                   </div>
                 </div>
               ))}

@@ -132,6 +132,7 @@ export const SERVICES: Service[] = [
       "SEO best practices",
       "Fast load times",
       "Impressive visuals",
+      "Stand out from the crowd",
     ],
     href: "#contact",
   },
